@@ -1,12 +1,16 @@
 local o = vim.opt
 local global = vim.g
+local diag = vim.diagnostic
 
-global.neovide_cursor_animation_length = 0.11
-global.neovide_cursor_vfx_mode = "railgun" --"railgun", "torpedo", "pixiedust", "sonic", "ripple", "asteroids"
+if global.neovide then
+	global.neovide_refresh_rate = 75
+	global.neovide_scale_factor = 0.9
+	global.neovide_cursor_animation_length = 0.11
+	global.neovide_cursor_vfx_mode = "railgun" --"railgun", "torpedo", "pixiedust", "sonic", "ripple", "asteroids"
+end
 
 global.mapleader = " "
 global.maplocalleader = "\\"
-global.neovide_scale_factor = 0.9
 
 o.showmode = false -- Não mostra o modo (INSERT, NORMAL, etc) na última linha
 o.relativenumber = true -- Números relativos para pular linhas rápido
@@ -22,17 +26,17 @@ o.updatetime = 200 -- Resposta mais rápida do sistema
 o.mouse = "a" -- Habilita o uso do mouse
 o.clipboard = "unnamedplus"
 
-vim.diagnostic.config({
+diag.config({
 	signs = false,
 	virtual_text = {
 		spacing = 4,
 		prefix = "",
 		format = function(diagnostic)
 			local icons = {
-				[vim.diagnostic.severity.ERROR] = "󰅚 ",
-				[vim.diagnostic.severity.WARN] = "󰀪 ",
-				[vim.diagnostic.severity.HINT] = "󰌶 ",
-				[vim.diagnostic.severity.INFO] = "󰋽 ",
+				[diag.severity.ERROR] = "󰅚 ",
+				[diag.severity.WARN] = "󰀪 ",
+				[diag.severity.HINT] = "󰌶 ",
+				[diag.severity.INFO] = "󰋽 ",
 			}
 			local icon = icons[diagnostic.severity] or ""
 			return string.format("%s %s", icon, diagnostic.message)
