@@ -46,3 +46,10 @@ diag.config({
 	update_in_insert = false,
 	severity_sort = true,
 })
+
+vim.filetype.add({
+	extension = {
+		hbs = "html",
+		handlebars = "html",
+	},
+})
