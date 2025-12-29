@@ -23,7 +23,7 @@ return {
 		terminal = {
 			win = {
 				position = "bottom", -- Define a posição na parte inferior
-				height = 0.4, -- Ocupa 40% da tela (ajuste como preferir)
+				height = 0.25,
 			},
 		},
 	},
@@ -111,7 +111,12 @@ return {
 		{
 			"<leader>gg",
 			function()
-				Snacks.lazygit()
+				Snacks.lazygit.open({
+					configure = false,
+					win = {
+						height = 0.6,
+					},
+				})
 			end,
 			desc = "LazyGit",
 		},
