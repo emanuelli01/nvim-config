@@ -3,7 +3,6 @@ return {
 	version = "*",
 	dependencies = { "rafamadriz/friendly-snippets" },
 	opts = {
-		-- 1. CONFIGURAÇÃO GLOBAL (Editor/Modo Inserção)
 		keymap = {
 			preset = "none",
 			["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
@@ -23,20 +22,8 @@ return {
 			default = { "lsp", "path", "snippets", "buffer" },
 		},
 
-		-- 2. CONFIGURAÇÃO ESPECÍFICA PARA CMDLINE (Modo :)
 		cmdline = {
 			enabled = true,
-			sources = function()
-				local type = vim.fn.getcmdtype()
-				if type == "/" or type == "?" then
-					return { "buffer" }
-				end
-				if type == ":" then
-					return { "cmdline" }
-				end
-				return {}
-			end,
-			-- Opcional: min_keyword_length para o comando aparecer rápido
 			completion = {
 				menu = { auto_show = true },
 			},
