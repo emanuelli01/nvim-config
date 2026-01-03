@@ -14,8 +14,8 @@ return {
 
 		completion = {
 			menu = { auto_show = true },
-			trigger = { show_on_trigger_character = true },
-			ghost_text = { enabled = true },
+			trigger = { show_on_trigger_character = false },
+			ghost_text = { enabled = false },
 		},
 
 		sources = {

@@ -31,6 +31,8 @@ o.smartcase = true      -- Não ignora se houver uma maiúscula na busca
 o.updatetime = 200      -- Resposta mais rápida do sistema
 o.mouse = "a"           -- Habilita o uso do mouse
 o.clipboard = "unnamedplus"
+o.splitright = true
+o.splitbelow = true
 
 diag.config({
 	signs = false,
