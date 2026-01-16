@@ -27,6 +27,13 @@ return {
 			completion = {
 				menu = { auto_show = true },
 			},
+			keymap = {
+				preset = "none",
+				["<CR>"] = { "accept", "fallback" },
+				["<Tab>"] = { "select_next", "fallback" },
+				["<S-Tab>"] = { "select_prev", "fallback" },
+				["<Esc>"] = { "hide", "fallback" },
+			},
 		},
 	},
 }

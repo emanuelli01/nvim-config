@@ -2,7 +2,12 @@ local map = vim.keymap.set
 
 map("i", "jk", "<Esc>", { desc = "Exit insert mode", silent = true })
 map("t", "<C-w>k", [[<C-\><C-n><C-w>k]], { desc = "Go to upper window from terminal" })
-map('n', '<leader>xx', vim.diagnostic.setloclist, { desc = "View error list" })
-map('n', '<leader>xf', function()
+map("n", "<Esc>", "<cmd>noh<cr><Esc>", { desc = "Escape and Clear hlsearch" }) -- Limpa o destaque da busca ao pressionar ESC no modo normal
+map("n", "^", "<C-6>", { desc = "Go to the last buffer opened" })
+map("n", "<leader>xx", vim.diagnostic.setloclist, { desc = "View error list" })
+map("n", "<leader>xf", function()
 	vim.diagnostic.open_float({ focusable = true })
 end, { desc = "View error float" })
+map({ "n", "v" }, "<leader>ca", function()
+	vim.lsp.buf.code_action()
+end, { desc = "Code Actions" })
