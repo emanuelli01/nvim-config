@@ -26,13 +26,14 @@ return {
 			enabled = true,
 			completion = {
 				menu = { auto_show = true },
+				ghost_text = { enabled = true },
 			},
 			keymap = {
 				preset = "none",
-				["<CR>"] = { "accept", "fallback" },
 				["<Tab>"] = { "select_next", "fallback" },
 				["<S-Tab>"] = { "select_prev", "fallback" },
 				["<Esc>"] = { "hide", "fallback" },
+				["<C-l>"] = { "accept", "fallback" },
 			},
 		},
 	},
