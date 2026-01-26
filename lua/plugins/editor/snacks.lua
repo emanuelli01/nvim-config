@@ -122,12 +122,12 @@ return {
 			end,
 			desc = "LazyGit",
 		},
-		{
-			"<leader>ca",
-			function()
-				Snacks.picker.lsp_actions()
-			end,
-			desc = "Code Actions",
-		},
+		-- {
+		-- 	"<leader>ca",
+		-- 	function()
+		-- 		Snacks.picker.lsp_actions()
+		-- 	end,
+		-- 	desc = "Code Actions",
+		-- },
 	},
 }
