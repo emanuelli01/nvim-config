@@ -4,8 +4,14 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
-			style = "night", -- Opções: storm, night, day, moon
-			terminal_colors = false, -- Importante para o terminal do snacks ficar bonito
+			style = "moon",  -- storm, dark, day, moon
+			transparent = true, -- Ativa a transparência para o Kitty
+			terminal_colors = true,
+			styles = {
+				-- Opcional: garante que janelas flutuantes e sidebars também sejam transparentes
+				sidebars = "transparent",
+				floats = "transparent",
+			},
 		},
 		config = function(_, opts)
 			require("tokyonight").setup(opts)
