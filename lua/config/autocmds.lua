@@ -4,8 +4,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
 	callback = function()
 		vim.highlight.on_yank({
-			higroup = "IncSearch", -- O grupo de cor (IncSearch é o padrão, geralmente amarelo/laranja)
-			timeout = 100, -- Duração do brilho em milisegundos
+			higroup = "IncSearch", -- Highlight group (IncSearch is the default, usually yellow/orange)
+			timeout = 100, -- Highlight duration in milliseconds
 		})
 	end,
 })

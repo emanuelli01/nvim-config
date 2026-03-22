@@ -9,7 +9,7 @@ return {
 		-- refer to the configuration section below
 		bigfile = { enabled = true },
 		dashboard = { enabled = false },
-		explorer = { enabled = true },
+		explorer = { enabled = true, watch = true },
 		indent = { enabled = true },
 		input = { enabled = true },
 		picker = { enabled = true },
@@ -22,7 +22,7 @@ return {
 		lualine = { enabled = true },
 		terminal = {
 			win = {
-				position = "bottom", -- Define a posição na parte inferior
+				position = "bottom", -- Position at the bottom
 				height = 0.25,
 			},
 		},
@@ -49,42 +49,42 @@ return {
 			function()
 				Snacks.picker.files()
 			end,
-			desc = "Procurar Arquivos",
+			desc = "Find Files",
 		},
 		{
 			"<leader>fg",
 			function()
 				Snacks.picker.grep()
 			end,
-			desc = "Buscar Texto (Grep)",
+			desc = "Search Text (Grep)",
 		},
 		{
 			"<leader>fb",
 			function()
 				Snacks.picker.buffers()
 			end,
-			desc = "Buffers Abertos",
+			desc = "Open Buffers",
 		},
 		{
 			"<leader>fh",
 			function()
 				Snacks.picker.help()
 			end,
-			desc = "Ajuda (Help Tags)",
+			desc = "Help Tags",
 		},
 		{
 			"<leader>e",
 			function()
 				Snacks.explorer()
 			end,
-			desc = "Explorador de Arquivos",
+			desc = "File Explorer",
 		},
 		{
 			"<leader>bd",
 			function()
 				Snacks.bufdelete()
 			end,
-			desc = "Fechar Buffer",
+			desc = "Close Buffer",
 		},
 		{
 			"gd",
